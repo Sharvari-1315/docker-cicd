@@ -1,14 +1,25 @@
-# 🚀 Python App with Docker & GitHub Actions CI/CD
+## ⚙️ CI/CD Pipeline with GitHub Actions
 
-This repository contains a simple **Python application** that is containerized using **Docker** and automatically deployed using **GitHub Actions** as part of a **CI/CD pipeline**.
+This project includes a **Docker-based CI/CD pipeline** implemented using **GitHub Actions** and **Ansible** on a self-hosted runner.  
+The workflow automates testing, building, pushing, and deploying the application container.
 
-### 💡 Workflow Overview
+### 🚀 Workflow Overview
 
--  **Triggered on:** Push to the `main` branch test.txt file or on pull requests.
--  **Step 1:** Checks out the repository code  
-- **Step 2:** Sets up Python and installs dependencies
-- **Step 3:** Builds the Docker image
-- **Step 3:** Builds the Docker image  
-- **Step 4:** Runs tests (if configured)  
-- **Step 5:** Pushes the Docker image to Docker Hub or GitHub Container Registry  
-- **Step 6 (Optional):** Deploys to a remote server or cloud service
+| Step | Description |
+|------|--------------|
+| **1. Trigger** | Workflow runs automatically on push or pull request to the `main` branch. |
+| **2. Checkout Code** | Fetches the latest source code from the repository. |
+| **3. Install Dependencies** | Installs Python 3, pip, Ansible, and creates a virtual environment. |
+| **4. Run Unit Tests** | Installs dependencies and executes tests using `pytest` to verify app functionality. |
+| **5. Install Docker** | Uses Ansible playbook (`ansible/install_docker.yaml`) to set up Docker on the host. |
+| **6. Build Docker Image** | Builds a Docker image named `hello-app:latest` from the Dockerfile. |
+| **7. Push Image to Docker Hub** | Logs in using GitHub Secrets and uploads the image to your Docker Hub account. |
+| **8. Deploy Container** | Pulls the latest image and runs it on port `5000` as a container. |
+| **9. Success Message** | Prints a confirmation message after successful execution. |
+
+### 📦Tools Used
+GitHub Actions – for CI/CD automation
+Python & Pytest – for testing
+Docker – for containerization
+Ansible – for environment setup and deployment
+
