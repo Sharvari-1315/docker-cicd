@@ -34,3 +34,13 @@ The workflow automates testing, building, pushing, and deploying the application
      ./run.sh
      ```
    - This runner will execute workflow jobs on your server.
+## Screenshots
+
+### GitHub Actions Workflow
+![GitHub Actions Workflow](./screenshots/github-actions.png)
+
+### Docker Image Build
+![Docker Build](./screenshots/docker-image.png)
+
+### Running Application
+![App Running](./screenshots/app.png)
