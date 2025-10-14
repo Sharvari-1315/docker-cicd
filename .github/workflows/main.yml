@@ -1,6 +1,7 @@
 name: Docker CICD pipeline
 on:
   push:
+    branches: ["main"]
     paths:
       - test.txt
   pull_request:
