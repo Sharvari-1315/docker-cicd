@@ -16,7 +16,7 @@ jobs:
       - name: Install Ansible and python3
         run: |
           sudo apt update
-          sudo apt install python3 python3-pip ansible -y
+          sudo apt install python3 python3-pip ansible python3.12-venv -y
       - name: Install dependencies and run tests
         run: |
           python3 -m venv venv
