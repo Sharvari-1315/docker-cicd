@@ -21,7 +21,7 @@ jobs:
       - name: Install docker
         run: ansible-playbook ansible/install_docker.yaml
       - name: Build docker image
-        run: docker build -t hello-app:latest .
+        run: sudo docker build -t hello-app:latest .
       - name: Push docker image to docker hub
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
