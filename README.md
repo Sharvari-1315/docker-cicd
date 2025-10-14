@@ -18,8 +18,19 @@ The workflow automates testing, building, pushing, and deploying the application
 | **9. Success Message** | Prints a confirmation message after successful execution. |
 
 ### 📦Tools Used
-GitHub Actions – for CI/CD automation
-Python & Pytest – for testing
-Docker – for containerization
-Ansible – for environment setup and deployment
+- **GitHub Actions** – Automates the CI/CD pipeline
+- **Python & Pytest** – Runs unit tests
+- **Docker** – Builds and deploys the application container
+- **Ansible** – Installs Docker and manages deployment
 
+### Pre-requisite
+**Set up self-hosted runner**
+   - Install GitHub Actions runner on your server:
+     ```bash
+     mkdir actions-runner && cd actions-runner
+     curl -o actions-runner-linux-x64.tar.gz -L https://github.com/actions/runner/releases/download/v2.305.0/actions-runner-linux-x64-2.305.0.tar.gz
+     tar xzf ./actions-runner-linux-x64.tar.gz
+     ./config.sh --url https://github.com/<username>/<repo> --token <runner-token>
+     ./run.sh
+     ```
+   - This runner will execute workflow jobs on your server.
