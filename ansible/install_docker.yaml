@@ -9,7 +9,7 @@
         state: present
     - name: Add permission to user
       shell: |
-        sudo usermod -aG docker $USER
+        sudo usermod -aG docker ubuntu
         newgrp docker
     - name: print message
       debug:
