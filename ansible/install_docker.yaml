@@ -7,11 +7,6 @@
         name: docker.io
         update-cache: yes
         state: present
-    - name: Add permission to user
-      user:
-        name: ubuntu
-        groups: docker
-        append: yes
     - name: print message
       debug:
         msg: "Docker installed successfully."
