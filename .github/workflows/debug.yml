@@ -1,0 +1,15 @@
+name: Debug Checkout
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  test-checkout:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: List files
+        run: ls -la
