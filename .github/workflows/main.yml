@@ -16,8 +16,12 @@ jobs:
       - name: Install Ansible and python3
         run: |
           sudo apt update
-          sudo apt install python3 -y
-          sudo apt install ansible -y 
+          sudo apt install python3 python3-pip ansible -y
+      - name: Install dependencies and run tests
+        run: |
+          pip3 install -r requirements.txt
+          pip3 install pytest
+          pytest -v
       - name: Install docker
         run: ansible-playbook ansible/install_docker.yaml
       - name: Build docker image
