@@ -1,6 +1,6 @@
 ## ⚙️ CI/CD Pipeline with GitHub Actions
 
-This project includes a **Docker-based CI/CD pipeline** implemented using **GitHub Actions** and **Ansible** on a self-hosted runner.  
+This project includes a **Docker-based CI/CD pipeline** implemented using **GitHub Actions** on a self-hosted runner.  
 The workflow automates testing, building, pushing, and deploying the application container.
 
 ### 🚀 Workflow Overview
@@ -11,17 +11,15 @@ The workflow automates testing, building, pushing, and deploying the application
 | **2. Checkout Code** | Fetches the latest source code from the repository. |
 | **3. Install Dependencies** | Installs Python 3, pip, Ansible, and creates a virtual environment. |
 | **4. Run Unit Tests** | Installs dependencies and executes tests using `pytest` to verify app functionality. |
-| **5. Install Docker** | Uses Ansible playbook (`ansible/install_docker.yaml`) to set up Docker on the host. |
-| **6. Build Docker Image** | Builds a Docker image named `hello-app:latest` from the Dockerfile. |
-| **7. Push Image to Docker Hub** | Logs in using GitHub Secrets and uploads the image to your Docker Hub account. |
-| **8. Deploy Container** | Pulls the latest image and runs it on port `5000` as a container. |
-| **9. Success Message** | Prints a confirmation message after successful execution. |
+| **5. Build Docker Image** | Builds a Docker image named `hello-app:latest` from the Dockerfile. |
+| **6. Push Image to Docker Hub** | Logs in using GitHub Secrets and uploads the image to your Docker Hub account. |
+| **7. Deploy Container** | Pulls the latest image and runs it on port `5000` as a container. |
+| **8. Success Message** | Prints a confirmation message after successful execution. |
 
 ### 📦Tools Used
 - **GitHub Actions** – Automates the CI/CD pipeline
 - **Python & Pytest** – Runs unit tests
 - **Docker** – Builds and deploys the application container
-- **Ansible** – Installs Docker and manages deployment
 
 ### Pre-requisite
 **Set up self-hosted runner**
