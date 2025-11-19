@@ -13,10 +13,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Install Ansible and python3
+      - name: Install python3 and pip
         run: |
           sudo apt update
-          sudo apt install python3 python3-pip ansible python3.12-venv -y
+          sudo apt install python3 python3-pip python3.12-venv -y
       - name: Install dependencies and run tests
         run: |
           python3 -m venv venv
@@ -25,8 +25,6 @@ jobs:
           pip install pytest
           export PYTHONPATH="${PYTHONPATH}:$(pwd)"
           pytest -v
-      - name: Install docker
-        run: ansible-playbook ansible/install_docker.yaml
       - name: Build docker image
         run: sudo docker build -t hello-app:latest .
       - name: Push docker image to docker hub
