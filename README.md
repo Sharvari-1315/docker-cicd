@@ -35,7 +35,7 @@ The workflow automates testing, building, pushing, and deploying the application
 ## Screenshots
 
 ### GitHub Actions Workflow
-![GitHub Actions Workflow](./screenshots/github-actions.png)
+![GitHub Actions Workflow](./screenshots/github-actions-wf.png)
 
 ### Docker Image Build
 ![Docker Build](./screenshots/docker-image.png)
