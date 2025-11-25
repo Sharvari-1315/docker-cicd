@@ -39,6 +39,7 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         run: |
+          docker rm -f hello-app || true
           docker pull $DOCKER_USERNAME/hello-app:latest
           docker run -d --name hello-app -p 5000:5000 $DOCKER_USERNAME/hello-app:latest
       - name: Print message
